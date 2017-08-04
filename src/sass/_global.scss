@@ -1,0 +1,171 @@
+*, *:after, *:before {
+	margin: 0;
+	padding: 0;
+	@include border-box;
+}
+ul {
+    &, li{
+        list-style: none;
+        list-style-type: none;
+    }
+}
+body{
+	font-size: 14px;
+	font-family: $open;
+}
+     
+img {
+	width: auto;
+	max-width: 100%;
+}   
+ 
+.container,.container-fluid {
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+    padding: 0 $gutter;
+}
+ 
+.container,.contFluid, .row {
+	@extend %clearfix;
+}
+.row{
+	margin-left: -$gutter;
+	margin-right: -$gutter;
+}
+
+[class*='col-'] {
+	float: left;
+	padding: 0 $gutter;
+	width: 100%;
+	min-height: 1px; 
+}   
+
+
+a{
+    color: $base;
+    text-decoration: none;
+}
+
+address{
+    font-style: normal;
+}
+.right{
+	float:right;
+}
+.left{
+	float:left;
+}
+.text-right{
+	text-align: right;
+}
+h1{
+	font-size:2.5em;
+	font-weight: 400;
+}
+h2{
+	font-size:2.0em;
+	font-weight: 400;
+}
+h3{
+	font-size:1.5em;
+	color:$base;
+}
+h4{
+	font-size:1em;
+}
+@media only screen and (max-width:767px){
+body{
+	font-size:12px;
+}
+h1{
+	font-size:1.8em;
+	font-weight: 400;
+}
+h2{
+	font-size:1.6em;
+	font-weight: 400;
+}
+h3{
+	font-size:1.3em;
+	color:$base;
+}
+h4{
+	font-size:1em;
+}}
+h1,h2,h3,h4,p,.embed-responsive{
+	margin-bottom: 15px;
+}
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.embed-responsive.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+.embed-responsive.embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
+.embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media #{$xsmall} {
+	.container {      
+		max-width: $xsmall-mw;
+	}
+	@for $i from 1 through $grid {      
+		.col-xs-#{$i} {         
+			width: 100% / $grid * $i;   
+		}           
+	}   
+}
+@media #{$small} {
+	.container {      
+		max-width: $small-mw
+	}
+	@for $i from 1 through $grid {      
+		.col-sm-#{$i} {         
+			width: 100% / $grid * $i;   
+		}           
+	}  
+	 
+}
+@media #{$medium} {
+	.container {      
+		max-width: $medium-mw;     
+	}
+	@for $i from 1 through $grid {      
+		.col-md-#{$i} {         
+				width: 100% / $grid * $i;   
+		}           
+	}   
+}
+@media #{$large} {
+	.container {      
+		max-width: $large-mw;     
+	}
+	@for $i from 1 through $grid {      
+		.col-lg-#{$i} {         
+			width: 100% / $grid * $i;   
+		}           
+	}   
+}
+@media #{$xlarge} {
+	.container {      
+		max-width: $xlarge-mw;     
+	}
+	@for $i from 1 through $grid {      
+		.col-xl-#{$i} {         
+				width: 100% / $grid * $i;   
+		}           
+	}   
+}

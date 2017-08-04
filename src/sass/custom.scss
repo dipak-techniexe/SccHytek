@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import "variable";
+@import "mixins";
+@import "global";
+
+header{
+    background: white;
+    #logo{
+        float:left;
+    }
+    .top-bar{
+        width:100%;
+        background:black;
+        .col-sm-6{
+            line-height: 30px;
+            &:first-child{
+                a{
+                    padding:0 20px;
+                    float: left;
+                    color:white;
+                    border-left:1px solid $base;
+                    &:last-child{
+                        border-right:1px solid $base;
+                    }
+                }
+                @media only screen and (max-width:767px){
+                    a{
+                        padding:0 10px;
+                    }
+                }
+            }
+            &:last-child{
+                a{
+                    float:right;
+                    color:white;
+                    display: inline-block;
+                    height: 30px;
+                    overflow: hidden;
+                    padding:0 10px;
+                    border-left:1px solid $base;
+                    &:first-child{
+                        border-right:1px solid $base;
+                        i{
+                            display:none;
+                        }
+                        @media only screen and (max-width:767px){
+                            i{
+                                display:inline-block;
+                            }
+                            span{
+                                display:none;
+                            }
+                        }
+                    }
+                    .fa{
+                        font-size:18px;
+                        margin-top:7px;
+                    }
+                }
+            }
+            
+        }
+    }
+    nav{
+        float:right;
+        > ul{
+            > li{
+                list-style: none;
+                list-style-type: none;
+                float: left;
+                position: relative;
+                a{
+                    float:left;
+                    padding:20px 10px;
+                    line-height: 32px;
+                    text-decoration: none;
+                    color: black;
+                    text-transform: uppercase;
+                    @include transition;
+                    &:hover, &.act{
+                        color:$base;
+                    }
+                }
+                @media only screen and (max-width:991px){
+                a {
+                    padding:20px 7px;
+                    font-size: 10px;
+                    line-height: 24px
+                }}
+            }
+        }
+    }
+    .fa-bars{
+        display: none;
+        width:36px;
+        height:36px;
+        text-align: center;
+        line-height: 34px;
+        font-size: 24px;
+        background: $base;
+        color:white;
+        float:right;
+    }
+    @media only screen and (max-width:767px){
+        .fa-bars{
+            display: block;
+        }
+        nav{
+            float:none;
+            display:none;
+            > ul{
+                > li{
+                    float:none;
+                    a{
+                        float:none;
+                        display:block;
+                        padding:5px 10px;
+                        border-bottom:1px solid $base;
+                        font-weight: bold;
+                        &:hover, &.act{
+                            background:$base;
+                            color:white;
+                        }
+                    }
+                    &:first-child{
+                        a{
+                            border-top:1px solid $base;
+                        }
+                    }
+                }
+            }
+            &.act{
+                display:block;
+            }
+        }
+    }
+}
+
+main{
+    position: relative;
+    &:before{
+        content:'';
+        position:absolute;
+        top:0;
+        width: 100%;
+        height: 300px;
+        max-height: 100%;
+        left: 0;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e5e5e5+0,000000+100&1+0,0+100 */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U1ZTVlNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top, rgba(229,229,229,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,229,229,1)), color-stop(100%,rgba(0,0,0,0))); /* Chrome4-9,Safari4-5 */
+        background: -webkit-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: -o-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10-11.50 */
+        background: -ms-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(0,0,0,0) 100%); /* IE10 preview */
+        background: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#00000000',GradientType=0 ); /* IE6-8 */
+    }
+    > div{
+        position: relative;
+    }
+    .story {
+        overflow: hidden;
+        margin-bottom: 15px;
+        > a{
+        padding: 5px 15px;
+        background: $base;
+        color:white;
+        float: right;
+        i{
+            margin-left: 5px;
+        }
+    }}
+    article.col-md-8{
+        ul{
+            margin-bottom: 15px;
+            li{
+                list-style-type: disc;
+                margin-left: 18px;
+            }
+        }
+        &.gallery > .row {
+            margin-left: -3px;
+            > .col-sm-3{
+                padding:0 3px 6px;
+                img{
+                    float:left;
+                }
+            }
+        }
+    }
+}
+
+#Contact{
+    label{
+        margin-bottom: 5px;
+        display: block;
+    }
+    input, textarea, select{
+        width:100%;
+        border:1px solid $base;
+        padding: 5px 10px;
+        height:28px;
+        margin-bottom: 10px;
+        background:none;
+    }
+    textarea{
+        height:120px;
+    }
+    input[type="submit"]{
+        background:$base;
+        color:#fff;
+    }
+    ul.social li{
+        list-style: none;
+        list-style-type: none;
+        margin-left: 0;
+        i{
+            font-size:1.5em;
+            line-height: 1.5em;
+            color:$base;
+    }}
+}
+
+footer{
+    padding: 30px 0 30px;
+    margin-top: 15px;
+    background:black;
+    color:white;
+    ul li{
+        padding: 3px 0;
+        
+        i{
+            margin-right: 5px;
+        }
+        a{
+            color:white;
+            @include transition;
+            &:hover{
+                color:$base;
+            }        
+        }
+        &.social{
+            a{
+                width:32px;
+                height:32px;
+                background:$base;
+                color:white;
+                line-height: 32px;
+                text-align: center;
+                margin-right: 5px; 
+                font-size:20px;
+                @include border-radius(3px)
+            }
+        }
+    }
+}

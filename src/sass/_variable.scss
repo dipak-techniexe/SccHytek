@@ -1,0 +1,18 @@
+$grid: 12;
+$gutter : 15px;
+$base: #5075a9;
+$open: 'Open Sans', sans-serif;
+ 
+// breakpoints
+$xsmall: "only screen and (min-width: 0px)";
+$small: "only screen and (min-width: 576px)";
+$medium: "only screen and (min-width: 768px)";
+$large: "only screen and (min-width: 992px)";
+$xlarge: "only screen and (min-width: 1200px)";
+
+// breakpoints maximum width
+$xsmall-mw: 100%;
+$small-mw: 540px;
+$medium-mw: 720px;
+$large-mw: 960px;
+$xlarge-mw: 1140px;
